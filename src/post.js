@@ -1,21 +1,20 @@
-export default function post() {
+export default function Post({
+	title = 'no title',
+	body = 'no body',
+	children,
+}) {
 	return (
 		<div
 			style={{
 				border: '4px teal solid',
 				padding: '10px',
 				margin: '25px',
-				justifyContent: 'center',
-				alignItems: 'center',
 			}}
 		>
-			<h2>This is the post Title</h2>
-			<hr
-				style={{
-					backgroundColor: 'grey',
-				}}
-			></hr>
-			<p>This is the post body</p>
+			{children}
+			<h2>{title}</h2>
+			<hr />
+			<p>{body}</p>
 		</div>
 	);
 }
