@@ -2,30 +2,56 @@ import './TagButton.css';
 import TagButton from './TagButton';
 
 export default function SideMenu() {
-	return (
-		<div
-			style={{
-				border: '4px teal solid',
-			}}
-		>
-			<TagButton title={'جديدة'}>
+	const tagButtons = [
+		{
+			id: 1,
+			title: 'جديدة',
+			children: (
 				<div>
 					<span>😊😊😊</span>
 				</div>
-			</TagButton>
-			<TagButton title={'أخر المقالات'}>
+			),
+		},
+		{
+			id: 2,
+			title: 'أخر المقالات',
+			children: (
 				<div>
 					<img
 						width="100px"
 						src="https://hips.hearstapps.com/hmg-prod/images/white-cat-breeds-kitten-in-grass-67bf648a54a3b.jpg?crop=1.00xw:0.752xh;0,0.147xh&resize=1200:*"
+						alt="cat"
 					/>
 				</div>
+			),
+		},
+		{
+			id: 3,
+			title: 'الأكثر قراءة',
+			children: (
+				<>
+					<h1>Click me</h1>
+					<h1>👍</h1>
+				</>
+			),
+		},
+		{
+			id: 4,
+			title: 'مقالات مميزة',
+		},
+	];
+
+	const tagButtonsList = tagButtons.map((tagButton) => {
+		return (
+			<TagButton key={tagButton.id} title={tagButton.title}>
+				{tagButton.children}
 			</TagButton>
-			<TagButton title={'الأكثر قراءة'}>
-				<h1>Click me</h1>
-				<h1>👍</h1>
-			</TagButton>
-			<TagButton title={'مقالات مميزة'}></TagButton>
+		);
+	});
+
+	return (
+		<div style={{ border: '4px teal solid' }}>
+			{tagButtonsList}
 			<TagButton />
 		</div>
 	);
