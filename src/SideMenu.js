@@ -26,6 +26,7 @@ export default function SideMenu() {
 				<h1>👍</h1>
 			</TagButton>
 			<TagButton title={'مقالات مميزة'}></TagButton>
+			<TagButton />
 		</div>
 	);
 }
